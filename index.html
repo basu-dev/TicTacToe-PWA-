@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe</title>
+    <link rel="stylesheet" href="site.css">
+    <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+    <div class="tic">
+        <div class="title">Tick Tac Toe
+            <div class="menu" opened="false" onclick="toggle(this.children[0].children[0].attributes.checked.value)">
+                Double Player
+                <div class="bar">
+                    <div class="knob" checked="true">
+                        <div id='knobshadow'></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hamburgerdiv" onclick="toggleMenu(this)">
+                <div class="hitem"></div>
+            </div>
+        </div>
+        <div class="score">
+            <span id="x">Player X <span> 0 </span></span> :
+            <span id="o"> <span> 0 </span> Player O</span>
+        </div>
+        <div class="message"></div>
+        <div class="round">Round <span>1</span></div>
+        <div class="rows">
+            <div id="1"></div>
+            <div id="2"></div>
+            <div id="3"></div>
+        </div>
+        <div class="rows">
+            <div id="4"></div>
+            <div id="5"></div>
+            <div id="6"></div>
+        </div>
+        <div class="rows">
+            <div id="7"></div>
+            <div id="8"></div>
+            <div id="9"></div>
+        </div>
+        <div class="restart" onclick="restart()">Next</div>
+        <div class="footer">Designed By: <span> Basu Dev Adhikari</span></div>
+    </div>
+</body>
+<script src="main.js"></script>
+
+</html>

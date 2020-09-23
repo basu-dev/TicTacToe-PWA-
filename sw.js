@@ -5,7 +5,6 @@ const cacheAssets=[
     'main.js',
     'images/144.png',
     'sw.js'
-   
 ]
 self.addEventListener('install',(e)=>{
     e.waitUntil(caches.open(cacheName)

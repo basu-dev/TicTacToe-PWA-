@@ -10,15 +10,13 @@ const cacheAssets=[
 self.addEventListener('install',(e)=>{
     e.waitUntil(caches.open(cacheName)
         .then(cache=>{
-            console.log("Service Worker Caching ") 
-            cache.addAll(cacheAssets).then(e=>{console.log(e)})
+            cache.addAll(cacheAssets)
         })
         .then(()=>self.skipWaiting())
     )
 })
 self.addEventListener('activate',(e)=>{
 
-    console.log("Service Workder Activated")
     // Remove unwanted caches
     e.waitUntil(
         caches.keys().then(cacheNames=>{

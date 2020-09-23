@@ -204,7 +204,7 @@ if('serviceWorker' in navigator){
   window.addEventListener('load',()=>{
     navigator.serviceWorker
     .register('sw.js')
-    .then(reg=>console.log("service worker registered"))
+    .then(reg=>console.log("Tick Tac Toe ready for install and play online."))
     .catch(err=>`Service Error ${err}`)
   })
   

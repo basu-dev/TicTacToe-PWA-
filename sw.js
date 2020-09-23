@@ -8,13 +8,13 @@ const cacheAssets=[
    
 ]
 self.addEventListener('install',(e)=>{
-    // e.waitUntil(caches.open(cacheName)
-    //     .then(cache=>{
-    //         console.log("Service Worker Caching ") 
-    //         cache.addAll(cacheAssets).then(e=>{console.log(e)})
-    //     })
-    //     .then(()=>self.skipWaiting())
-    // )
+    e.waitUntil(caches.open(cacheName)
+        .then(cache=>{
+            console.log("Service Worker Caching ") 
+            cache.addAll(cacheAssets).then(e=>{console.log(e)})
+        })
+        .then(()=>self.skipWaiting())
+    )
 })
 self.addEventListener('activate',(e)=>{
 
@@ -34,27 +34,10 @@ self.addEventListener('activate',(e)=>{
     )
 })
 
-self.addEventListener('fetch',(e)=>{
-    console.log("Fetching")
-    e.respondWith(
-        fetch(e.request)
-        .then(res=>{
-            console.log(res)
-            let resClone=res.clone();
-            caches.open(cacheName).then(cache=>{
-                cache.put(e.request,resClone)
-            }).catch(err=>console.log("Caching Error ",err))
-        return res
-        }
-        )
-        .catch((err)=>{
-            console.log("Need To Fetch From Cache   ")
-            caches.match(e.request).catch(b=>{
-                console.log("Error",b)
-            })
-            
-            
-        }
-        )
-    ) 
-})
+self.addEventListener('fetch', function(event) {
+    event.respondWith(
+      fetch(event.request).catch(function() {
+        return caches.match(event.request);
+      })
+    );
+  });

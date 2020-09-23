@@ -4,7 +4,7 @@ const cacheAssets=[
     'site.css',
     'main.js',
     'images/144.png',
-    'sw.js'
+    'favicon.ico'
 ]
 self.addEventListener('install',(e)=>{
     e.waitUntil(caches.open(cacheName)

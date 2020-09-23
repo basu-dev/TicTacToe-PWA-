@@ -3,7 +3,7 @@
     "short_name":"Tic Tac Toe",
     "start_url":"./",
     "display":"standalone",
-    "background_color":"blue",
+    "background_color":"white",
     "description":"Play Tick Tac Toe",
     "orientation":"portrait",
     "theme_color":"transparent",

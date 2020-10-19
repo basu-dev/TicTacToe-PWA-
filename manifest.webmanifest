@@ -1,17 +1,17 @@
 {
     "name":"Tick Tac Toe",
     "short_name":"Tic Tac Toe",
-    "start_url":"./",
     "display":"standalone",
+    "start_url":"./",
     "background_color":"white",
     "description":"Play Tick Tac Toe",
     "orientation":"portrait",
     "theme_color":"transparent",
     "icons":[
         {
-            "src":"images/512.jpg",
+            "src":"images/512.png",
             "sizes":"512x512",
-            "type":"image/jpg"
+            "type":"image/png"
         },
         {
             "src":"images/144.png",

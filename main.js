@@ -1,4 +1,5 @@
 "use strict";
+
 let singlePlayer = true;
 document.querySelectorAll("div.rows div").forEach(x => {
   x.addEventListener("click", clicked);
@@ -200,12 +201,14 @@ function toggleMenu(element) {
     menu.attributes.opened.value = "false";
   }
 }
+
 if('serviceWorker' in navigator){
   window.addEventListener('load',()=>{
     navigator.serviceWorker
     .register('sw.js')
-    .then(reg=>console.log("Tick Tac Toe ready for install and play online."))
+    .then(reg=>console.log("Tick Tac Toe ready for install and play offline."))
     .catch(err=>`Service Error ${err}`)
+    // register("service.js");
   })
   
 }
